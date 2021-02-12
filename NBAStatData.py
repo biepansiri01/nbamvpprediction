@@ -351,4 +351,4 @@ class NBAStatData:
       if self.return_csv == True:
         mvp_share[year].to_csv(os.path.join(self.mvp_voting_path,'MVP_VOTING_SHARE({0}-{1}).csv'.format(year-1,year)), index=True) 
 
-    return 
+    return mvp_share

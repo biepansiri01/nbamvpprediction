@@ -163,6 +163,7 @@ class NBAStatData:
 
   @property
   def team_initials(self):
+    #ชื่อย่อทีม
     teamname ={
         'ATL':'Atlanta Hawks',
         'BOS':'Boston Celtics',

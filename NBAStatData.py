@@ -340,7 +340,7 @@ class NBAStatData:
   def mvp_votingshare(self):
     mvp_share = {}
     mvpcandidate_df = self.mvp_dataframe()
-    player_df = self.addspecialmergePlayerStat()
+    player_df = self.addspecialPlayerStat()
 
     for year in range(self.year_start, self.year_stop+1):
       mvpcandidate_df[year] = mvpcandidate_df[year][["Player","Share"]] 

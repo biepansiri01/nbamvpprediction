@@ -227,6 +227,8 @@ class NBAStatData:
 
       teamstat_df[year] = pd.concat([ec_team, wc_team]).reset_index(drop=True)
 
+      teamstat_df[year]["Tm"] = teamstat_df[year]["Tm"].str.replace(r"\((.*?)\)","")
+      teamstat_df[year]["Tm"] = teamstat_df[year]["Tm"].str.replace(r"\xa0","")
       teamstat_df[year]["Tm"] = teamstat_df[year]["Tm"].str.replace("*","")
 
 
@@ -239,11 +241,12 @@ class NBAStatData:
       for col in numberic_col:
         teamstat_df[year][col] = pd.to_numeric(teamstat_df[year][col],errors='coerce')
 
-    
+      print(teamstat_df[year]["Tm"])
       team=[]
       for tm in teamstat_df[year]["Tm"]:
+        #print(tm)
         team.append(list(self.team_initials.keys())[list(self.team_initials.values()).index(tm)])
-
+        
      
       teamstat_df[year]["Tm"] = team
       
@@ -355,6 +358,4 @@ class NBAStatData:
         mvp_share[year].to_csv(os.path.join(self.mvp_voting_path,'MVP_VOTING_SHARE({0}-{1}).csv'.format(year-1,year)), index=True) 
 
     return mvp_share
-
-
 

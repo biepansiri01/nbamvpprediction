@@ -193,7 +193,7 @@ class NBAStatData:
         'NYK':'New York Knicks',
         'OKC':'Oklahoma City Thunder',
         'ORL':'Orlando Magic',
-        'PHI':'Philadelphia 76ers\xa0(1)',
+        'PHI':'Philadelphia 76ers',
         'PHO':'Phoenix Suns',
         'POR':'Portland Trail Blazers',
         'SAC':'Sacramento Kings',
@@ -292,6 +292,9 @@ class NBAStatData:
         except KeyError:
           teamwin_column.append(teamwin_dict["CHO"])
           teamtotal_column.append(teamtotal_dict["CHO"])
+        except KeyError:
+          teamwin_column.append(teamwin_dict["PHI"])
+          teamtotal_column.append(teamtotal_dict["PHI"])
 
 
       player["TW"] = teamwin_column
@@ -352,3 +355,6 @@ class NBAStatData:
         mvp_share[year].to_csv(os.path.join(self.mvp_voting_path,'MVP_VOTING_SHARE({0}-{1}).csv'.format(year-1,year)), index=True) 
 
     return mvp_share
+
+
+

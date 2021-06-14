@@ -194,7 +194,7 @@ class NBAStatData:
         'OKC':'Oklahoma City Thunder',
         'ORL':'Orlando Magic',
         'PHI':'Philadelphia 76ers',
-        'PHI':'Philadelphia 76ers\xa0(1)'.
+        'PHI':'Philadelphia 76ers\\xa0(1)'.
         'PHO':'Phoenix Suns',
         'POR':'Portland Trail Blazers',
         'SAC':'Sacramento Kings',
